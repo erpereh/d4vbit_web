@@ -1,4 +1,4 @@
-// Initialize AOS (Animate On Scroll)
+// Inicializar AOS (Animar al hacer Scroll)
 AOS.init({
     duration: 600,
     easing: 'ease-out',
@@ -9,7 +9,7 @@ AOS.init({
     disable: false
 });
 
-// Mobile Menu Toggle
+// Alternar Menú Móvil
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
 
@@ -20,7 +20,7 @@ if (mobileMenuBtn && mobileMenu) {
         icon.textContent = mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
     });
 
-    // Close mobile menu when clicking on a link
+    // Cerrar menú móvil al hacer clic en un enlace
     const mobileLinks = mobileMenu.querySelectorAll('a');
     mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -31,7 +31,7 @@ if (mobileMenuBtn && mobileMenu) {
     });
 }
 
-// Active Navigation Link Highlighting
+// Resaltado de Enlace de Navegación Activo
 const sections = document.querySelectorAll('section, footer');
 const navLinks = document.querySelectorAll('.nav-link');
 
@@ -58,7 +58,7 @@ function highlightActiveSection() {
     });
 }
 
-// Throttle function for performance
+// Función Throttle para rendimiento
 function throttle(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -71,22 +71,22 @@ function throttle(func, wait) {
     };
 }
 
-// Add scroll event listener with throttling
+// Añadir event listener de scroll con throttling
 window.addEventListener('scroll', throttle(highlightActiveSection, 100));
 
-// Smooth scroll for anchor links (fallback for older browsers)
+// Scroll suave para enlaces ancla (fallback para navegadores antiguos)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
 
-        // Don't prevent default for empty hash
+        // No prevenir default para hash vacío
         if (href === '#') return;
 
         e.preventDefault();
         const target = document.querySelector(href);
 
         if (target) {
-            const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+            const offsetTop = target.offsetTop - 80; // Tener en cuenta la barra de navegación fija
 
             window.scrollTo({
                 top: offsetTop,
@@ -96,7 +96,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add hover effect to skill badges
+// Añadir efecto hover a las insignias de habilidades
 const skillBadges = document.querySelectorAll('[class*="px-3 py-1.5"]');
 skillBadges.forEach(badge => {
     badge.addEventListener('mouseenter', function () {
@@ -108,17 +108,17 @@ skillBadges.forEach(badge => {
     });
 });
 
-// Add loading animation
+// Añadir animación de carga
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 
-    // Trigger AOS refresh after load
+    // Refrescar AOS después de cargar
     setTimeout(() => {
         AOS.refresh();
     }, 100);
 });
 
-// Intersection Observer for additional animations
+// Intersection Observer para animaciones adicionales
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -132,13 +132,13 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all cards
+// Observar todas las tarjetas
 const cards = document.querySelectorAll('.bg-surface');
 cards.forEach(card => {
     observer.observe(card);
 });
 
-// Add CSS class for animation
+// Añadir clase CSS para animación
 const style = document.createElement('style');
 style.textContent = `
     .animate-in {
@@ -167,7 +167,7 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Console message for recruiters
+// Mensaje de consola para reclutadores
 console.log('%c👋 ¡Hola, reclutador!', 'color: #3B82F6; font-size: 20px; font-weight: bold;');
 console.log('%c¿Interesado en mi trabajo? Contáctame:', 'color: #9CA3AF; font-size: 14px;');
 console.log('%c📧 david.perez.glesias2004@gmail.com', 'color: #3B82F6; font-size: 12px;');

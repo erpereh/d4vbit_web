@@ -4,18 +4,18 @@ Portfolio profesional desarrollado con HTML, CSS (Tailwind), y JavaScript vanill
 
 ## 🚀 Características
 
-- **Diseño Moderno**: Dark theme profesional con animaciones suaves
-- **Responsive**: Optimizado para desktop, tablet y móvil
-- **Animaciones**: Scroll animations con AOS y microinteracciones personalizadas
+- **Diseño Moderno**: Tema oscuro profesional con animaciones suaves
+- **Responsive**: Optimizado para escritorio, tablet y móvil
+- **Animaciones**: Animaciones al hacer scroll con AOS y microinteracciones personalizadas
 - **Accesibilidad**: Semántica HTML5, navegación por teclado, alto contraste
-- **Performance**: Optimizado para carga rápida y rendimiento
-- **SEO**: Meta tags optimizados para motores de búsqueda
+- **Rendimiento**: Optimizado para carga rápida y rendimiento
+- **SEO**: Meta etiquetas optimizadas para motores de búsqueda
 
 ## 🛠️ Tecnologías
 
 - HTML5
-- CSS3 (Tailwind CSS via CDN)
-- JavaScript (Vanilla)
+- CSS3 (Tailwind CSS vía CDN)
+- JavaScript (Nativo)
 - AOS (Animate On Scroll)
 - Google Fonts (Manrope)
 - Material Symbols Icons
@@ -24,68 +24,56 @@ Portfolio profesional desarrollado con HTML, CSS (Tailwind), y JavaScript vanill
 
 ```
 d4vbit_web/
-├── index.html          # Página principal
+├── index.html          # Contenedor principal
+├── header.html         # Cabecera y navegación
+├── footer.html         # Scripts y cierre
+├── sections/           # Secciones modulares
+│   ├── hero.html
+│   ├── about.html
+│   ├── experience.html
+│   ├── skills.html
+│   └── contact.html
 ├── script.js           # JavaScript personalizado
+├── local_server.js     # Servidor local (Soporte SSI)
 ├── recursos/           # Recursos del proyecto
-│   ├── CV_David_Perez_Iglesias.pdf  # CV profesional
-│   ├── imagen.jpg     # Foto de perfil
-│   ├── diseño.png     # Referencia de diseño
-│   └── code.html      # HTML base original
+│   ├── CV_David_Perez_Iglesias.pdf
+│   └── imagen.jpg
 └── README.md          # Este archivo
 ```
 
+
 ## 🌐 Despliegue en GitHub Pages
 
-### Opción 1: Configuración Manual
+Debido a que el proyecto ahora es modular utilizando Server Side Includes (SSI) simulados, **GitHub Pages no lo renderizará correctamente por defecto** si solo subes los archivos.
 
-1. Sube el proyecto a un repositorio de GitHub
-2. Ve a Settings > Pages
-3. En "Source", selecciona la rama `main` y carpeta `/ (root)`
-4. Guarda y espera unos minutos
-5. Tu sitio estará disponible en `https://[tu-usuario].github.io/[nombre-repo]`
-
-### Opción 2: Usando Git
-
-```bash
-# Inicializar repositorio
-git init
-
-# Añadir archivos
-git add .
-
-# Commit inicial
-git commit -m "Initial commit: Portfolio personal"
-
-# Conectar con repositorio remoto
-git remote add origin https://github.com/[tu-usuario]/[nombre-repo].git
-
-# Subir cambios
-git branch -M main
-git push -u origin main
-```
+Para desplegarlo en producción, se recomienda:
+1. Usar un script de "build" que combine los archivos (próximamente).
+2. O mantener la versión de un solo archivo para producción si no dispones de un servidor backend.
 
 ## 💻 Desarrollo Local
 
-Simplemente abre `index.html` en tu navegador favorito. No requiere servidor local ni proceso de build.
+Este proyecto utiliza una estructura modular. Para verlo correctamente, necesitas usar el servidor local incluido que combina los archivos dinámicamente.
 
-Para un mejor desarrollo, puedes usar:
+### Requisitos
+- [Node.js](https://nodejs.org/) instalado.
+
+### Pasos
+1. Abre una terminal en la carpeta del proyecto.
+2. Ejecuta el siguiente comando:
 
 ```bash
-# Con Python 3
-python -m http.server 8000
-
-# Con Node.js (npx)
-npx serve
-
-# Con VS Code
-# Instala la extensión "Live Server" y haz clic derecho > "Open with Live Server"
+node local_server.js
 ```
 
-## 📱 Responsive Breakpoints
+3. Abre tu navegador en [http://localhost:3000](http://localhost:3000).
 
-- **Mobile**: < 768px
+> **Nota**: Si abres `index.html` directamente en el navegador, verás la página vacía o incompleta porque los navegadores no procesan las directivas `<!--#include -->` nativamente.
+
+## 📱 Puntos de Ruptura (Responsive)
+
+- **Móvil**: < 768px
 - **Tablet**: 768px - 1024px
-- **Desktop**: > 1024px
+- **Escritorio**: > 1024px
 
 ## ♿ Accesibilidad
 

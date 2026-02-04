@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description"
+        content="David Pérez Iglesias - Programador y Analista Programador especializado en ERP Cegid. Portfolio profesional con experiencia en desarrollo web y sistemas." />
+    <meta name="keywords"
+        content="David Pérez, Programador, Analista Programador, Cegid ERP, Desarrollo Web, Java, Python" />
+    <meta name="author" content="David Pérez Iglesias" />
+
+    <title>David Pérez Iglesias - Programador & Analista</title>
+    <link rel="icon" type="image/svg+xml" href="recursos/favicon.svg" />
+
+    <!-- CSS de Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Símbolos Material -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- AOS - Animar al hacer Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Configuración de Tailwind -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3B82F6", // Electric Blue
+                        "midnight-bg": "#0B0E14", // Deep Midnight
+                        "surface": "#161B22", // Card Surface
+                        "border-color": "#30363D",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer base {
+            html {
+                scroll-behavior: smooth;
+                overflow-x: hidden;
+                width: 100%;
+            }
+
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        /* Animaciones personalizadas */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Animación de gradiente */
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .animate-gradient {
+            background-size: 200% 200%;
+            animation: gradient 8s ease infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-midnight-bg text-gray-300 font-display selection:bg-primary/30 selection:text-white">
+    <!-- Navegación -->
+    <nav class="sticky top-0 z-50 w-full bg-midnight-bg/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-[1200px] mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-2 group">
+                <div
+                    class="bg-primary p-1.5 rounded-lg text-white group-hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-all duration-300">
+                    <span class="material-symbols-outlined text-xl leading-none">code</span>
+                </div>
+                <span class="text-xl font-extrabold tracking-tight text-white">DP</span>
+            </div>
+
+            <!-- Menú de Escritorio -->
+            <div class="hidden md:flex items-center gap-8">
+                <a class="nav-link text-sm font-semibold text-gray-400 hover:text-white transition-colors"
+                    href="#about">Sobre mí</a>
+                <a class="nav-link text-sm font-semibold text-gray-400 hover:text-white transition-colors"
+                    href="#experience">Experiencia</a>
+                <a class="nav-link text-sm font-semibold text-gray-400 hover:text-white transition-colors"
+                    href="#skills">Habilidades</a>
+                <a class="nav-link text-sm font-semibold text-gray-400 hover:text-white transition-colors"
+                    href="#contact">Contacto</a>
+                <a href="recursos/CV_David_Perez_Iglesias.pdf" download="CV_David_Perez_Iglesias.pdf"
+                    class="bg-primary text-white px-5 py-2 rounded-lg text-sm font-bold hover:brightness-110 transition-all duration-300 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]">
+                    Descargar CV
+                </a>
+            </div>
+
+            <!-- Botón de Menú Móvil -->
+            <button id="mobile-menu-btn" class="md:hidden text-white">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-surface border-t border-border-color">
+            <div class="px-6 py-4 space-y-3">
+                <a class="block text-sm font-semibold text-gray-400 hover:text-white transition-colors"
+                    href="#about">Sobre mí</a>
+                <a class="block text-sm font-semibold text-gray-400 hover:text-white transition-colors"
+                    href="#experience">Experiencia</a>
+                <a class="block text-sm font-semibold text-gray-400 hover:text-white transition-colors"
+                    href="#skills">Habilidades</a>
+                <a class="block text-sm font-semibold text-gray-400 hover:text-white transition-colors"
+                    href="#contact">Contacto</a>
+                <a href="recursos/CV_David_Perez_Iglesias.pdf" download="CV_David_Perez_Iglesias.pdf"
+                    class="block text-center bg-primary text-white px-5 py-2 rounded-lg text-sm font-bold">
+                    Descargar CV
+                </a>
+            </div>
+        </div>
+    </nav>
