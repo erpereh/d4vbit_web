@@ -1,0 +1,11 @@
+{
+    "name": "d4vbit-web",
+    "version": "1.0.0",
+    "description": "Portfolio Personal",
+    "scripts": {
+        "start": "node local_server.js",
+        "build": "node build.js"
+    },
+    "author": "David Pérez Iglesias",
+    "license": "ISC"
+}
